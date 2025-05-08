@@ -17,4 +17,4 @@ IgBERT was fine-tuned on antibody chains, so its latent space already encodes ma
 
 ## Use embeddings from protein language models for classical machine learning
 ![image](https://github.com/user-attachments/assets/930dc76b-896c-4d9f-86bf-155fa331606c)
-From 8M to 150M we have clear gain in prediction which plateaued between 150M and 650M. Bigger model (3B) has representation noise that cannot be averaged out by classical ML. The best performing model-algorithm in terms of correlation is ESM2-650M + XGBoost (ρ = 0.42)
+From 8M to 150M we have clear gain in prediction which plateaued between 150M and 650M. Bigger model (3B) has representation noise that cannot be averaged out by classical ML. The best performing model-algorithm in terms of correlation is ESM2-650M + XGBoost (ρ = 0.42), while ESM-150M + Randomforrest is both performant and cost-effective (ρ = 0.41). For predicting yield, antibody domain specific prior in IgBERT does not help in this type of model structure compared to ESM.
