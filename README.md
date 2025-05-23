@@ -5,8 +5,8 @@ We aimed to test protein language models' cappability to predict various antibod
 ## Impact of dataset size on model performance
 We used these two datasets to evaluate model performace on prediction of protein yield. There is drastic improvement of prediction with more data points (Koenig paper).
 
-<img width="407" alt="Screenshot 2025-05-14 at 3 55 53 PM" src="https://github.com/user-attachments/assets/421ee36f-cf29-44cc-a724-6827f6d371b0" /> 
-<img width="434" alt="Screenshot 2025-05-14 at 3 56 50 PM" src="https://github.com/user-attachments/assets/684ba675-0337-4ccc-bce4-6be745c35907" />
+<img width="397" alt="Screenshot 2025-05-14 at 3 55 53 PM" src="https://github.com/user-attachments/assets/421ee36f-cf29-44cc-a724-6827f6d371b0" /> 
+<img width="414" alt="Screenshot 2025-05-14 at 3 56 50 PM" src="https://github.com/user-attachments/assets/684ba675-0337-4ccc-bce4-6be745c35907" />
 
 The left figure is result of training ESM models on Jain dataset (highly unstable and variable; the best spearman ρ is 0.32 using ESM2-650M) and the right is training on Koenig dataset (best ρ is 0.81 with LoRA-fine tuned ESM2-650M).
 Below are more detailed training results
@@ -46,3 +46,4 @@ From 8M to 150M we have clear gain in prediction which plateaued between 150M an
 
 ### train with koenig dataset
 ![image](https://github.com/user-attachments/assets/e55ad3e4-b019-4299-8cfb-a7544d72be52)
+Boost in performance in both loss and spearman correlation compared to training on small dataset. ESM-35M + random forrest is the best combination in terms of loss and ranking (ρ = 0.73). IgBERT with SVR is competitive with a correlation of 0.71. Note that SVR works better with IgBERT probably because of its layer norm mechanism (ESM embeddings may need standardization before fed into SVR to achieve better performance).
