@@ -37,6 +37,7 @@ IgBERT was fine-tuned on antibody chains, so its latent space already encodes ma
 ### train with koenig dataset
 <img width="401" alt="Screenshot 2025-05-23 at 12 52 30 AM" src="https://github.com/user-attachments/assets/a7d78819-aeac-440d-821c-7dd223f721eb" />
 <img width="400" alt="Screenshot 2025-05-23 at 12 52 48 AM" src="https://github.com/user-attachments/assets/ed3d1f92-c72f-4a36-9186-62e8a9a38dd8" />
+
 LoRA significantly improves performance on ranking; error bars are much smaller than training with smaller datasets. For expression prediction problem, IgBERT with domain-specific priors does NOT bring advantages compared to general model ESM, even with LoRA.
 
 
