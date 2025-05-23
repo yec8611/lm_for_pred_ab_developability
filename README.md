@@ -5,8 +5,8 @@ We aimed to test protein language models' cappability to predict various antibod
 ## Impact of dataset size on model performance
 We used these two datasets to evaluate model performace on prediction of protein yield. There is drastic improvement of prediction with more data points (Koenig paper).
 
-<img width="477" alt="Screenshot 2025-05-14 at 3 55 53 PM" src="https://github.com/user-attachments/assets/421ee36f-cf29-44cc-a724-6827f6d371b0" /> 
-<img width="514" alt="Screenshot 2025-05-14 at 3 56 50 PM" src="https://github.com/user-attachments/assets/684ba675-0337-4ccc-bce4-6be745c35907" />
+<img width="457" alt="Screenshot 2025-05-14 at 3 55 53 PM" src="https://github.com/user-attachments/assets/421ee36f-cf29-44cc-a724-6827f6d371b0" /> 
+<img width="494" alt="Screenshot 2025-05-14 at 3 56 50 PM" src="https://github.com/user-attachments/assets/684ba675-0337-4ccc-bce4-6be745c35907" />
 
 The left figure is result of training ESM models on Jain dataset (highly unstable and variable; the best spearman ρ is 0.32 using ESM2-650M) and the right is training on Koenig dataset (best ρ is 0.81 with LoRA-fine tuned ESM2-650M).
 Below are more detailed training results
@@ -32,8 +32,8 @@ ESM-150M is the sweet spot without fine tuning for 3k data points; LoRA drastica
 IgBERT was fine-tuned on antibody chains, so its latent space already encodes many developability motifs, thus predicting with ~15 % lower MSE and roughly same spearman coefficient despite a smaller backbone (420M). LoRA fine-tuning on IgBERT hurts both MSE and spearman correlation -> we injected unnecessary capacity into an already well-aligned representation
 
 ### train with koenig dataset
-<img width="501" alt="Screenshot 2025-05-23 at 12 52 30 AM" src="https://github.com/user-attachments/assets/a7d78819-aeac-440d-821c-7dd223f721eb" />
-<img width="500" alt="Screenshot 2025-05-23 at 12 52 48 AM" src="https://github.com/user-attachments/assets/ed3d1f92-c72f-4a36-9186-62e8a9a38dd8" />
+<img width="481" alt="Screenshot 2025-05-23 at 12 52 30 AM" src="https://github.com/user-attachments/assets/a7d78819-aeac-440d-821c-7dd223f721eb" />
+<img width="480" alt="Screenshot 2025-05-23 at 12 52 48 AM" src="https://github.com/user-attachments/assets/ed3d1f92-c72f-4a36-9186-62e8a9a38dd8" />
 LoRA significantly improves performance on ranking; error bars are much smaller than training with smaller datasets. For expression prediction problem, IgBERT with domain-specific priors does not bring advantages compared to general model ESM, even with LoRA.
 
 
